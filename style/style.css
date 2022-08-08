@@ -1,0 +1,28 @@
+html{
+    font-family: 'Bree Serif', serif;
+}
+
+table{
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+caption{
+    padding: 10px;
+}
+
+td, th{
+    border: 1px solid rgb(190, 190, 190);
+    padding: 10px 20px;
+}
+
+/* nth-child(n) 選擇特定順序的項目 */
+th, tr:nth-child(1){   /* 改變第一行、列的顏色 */
+    background-color: rgb(235, 235, 235);
+}
+
+td{ /* 文字置中 */
+    text-align: center;
+}
