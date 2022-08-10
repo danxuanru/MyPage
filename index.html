@@ -9,66 +9,101 @@
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     </head>
     <body>
+
         <script>
-            str = "Hello World!";
-            document.write(str);
-            console.log(5+6);
-            console.log("ERROR");
+
+        function capitalizeString(){
+            let input = document.getElementById("input");
+            let headingElement = document.getElementById("output");
+            let string = input.value;
+            if(string[0] >='A' && string <='Z'){
+                headingElement.innerHTML = "First Letter is UPPER";
+            }else if(string  === ""){     //  === "" check empty string
+                headingElement.innerHTML = "No Enter!";
+            }else{
+                headingElement.innerHTML = "First Letter is LOWER";
+            }
+        }
+
+        function makeStar(){
+            let n = prompt("輸入階層");
+            for(i=0;i<n;i++){
+                for(j=0;j<i+1;j++){
+                    document.write("*");
+                }
+                document.write("<br>");
+            }
+        }
+
+        function countArray() {
+            var arr = [1,3,6,7,2,4.10];
+            var n = prompt("標準值n");
+            var count = 0;
+            for(i=0; i<arr.length; i++){
+                if(arr[i] < n){
+                    count += 1;
+                }
+            }
+            alert(count);
+        }
+
+        function checkPrime(num){
+            alert("你輸入的是"+num);
+                YesorNo = "True";
+                for(i=2; i<num; i++){
+                    if(num % i == 0){
+                       return false;
+                    }
+                }
+                return true;
+        }
+        function Prime(){
+            while(1){
+                var num = prompt("請輸入數字");
+                alert(checkPrime(num));
+            }
+        }
+    
+        function calculateSum(arr){
+            var sum = 0;
+            for(i=0; i<arr.length; i++){
+                sum += arr[i];
+            }
+            return sum;
+        }
+        function sum(){
+            var arr = [1,2,3,6];
+            alert(calculateSum(arr));
+        }
+        
+
         </script>
 
-        <br>
-        <p id="demo"></p>
-        <button type="button" onclick="document.write('write')">
-            write</button>
-        <button type="button" onclick="document.getElementById('demo').innerHTML = 'innerHTML'">
-            innerHTML</button>
-        <button type="button" onclick="alert('window.alert')">
-            window.alert</button>
-        <button type="button" onclick="console.log('console.log')">
-            console.log</button>
+        <input id="input" type="text" name="input"/>
+        <button onclick="capitalizeString()">capitalize</button>
         
-        <hr>  
-        <pre>   <!-- pre包夾JavaScript程式碼 可以得到JS的原始輸出(未經過瀏覽器的排版) -->
-        使用 document.write():
-        <script>document.write("Good"); document.write("Bye!");</script>
-        使用 document.writeln():
-        <script>document.writeln("Good"); document.writeln("Bye!");</script>
-        使用 document.write() 再加上 "\n":
-        <script>document.write("Good\n"); document.write("Bye!\n");</script>
-        </pre>
+        <h3 id="output"></h3>
         <hr>
 
+        <button onclick="makeStar()">Star</button><br>
+        <button onclick="countArray()">Count</button><br>
+        <button onclick="Prime()">Prime</button><br>
 
-        <table>
-            <caption>TABLE</caption>
-            <tr>
-                <th></th> <td>height</td> <td>weight</td> <td>BMI</td>
-            </tr>
-            <tr>
-                <th>P1</th> <td>170</td> <td>63</td> <td>21.7</td>
-            </tr>
-            <tr>
-                <th>P2</th> <td>158</td> <td>50</td> <td>20.0</td>
-            </tr>
-            <tr>
-                <th>P3</th> <td>163</td> <td>54</td> <td>20.3</td>
-            </tr>
-        </table>
+        <!-- <h3>Input Array Elements</h3>
+        <form class="arraySum" action="index.html" method="post">
+            <input type="text" name="array[]" value="" /><br>
+            <input type="text" name="array[]" value="" /><br>
+            <input type="text" name="array[]" value="" /><br>
+            <input type="text" name="array[]" value="" /><br>
+            <input type="text" name="array[]" value="" /><br>
+            <button type="button" name="button" onclick="sum()">
+                Submit
+            </button>
+        </form> -->
+        <button onclick="sum()">Sum</button>
 
-        <form>
-            <p>TEXT : <input type="text"></p>
-            <p>PASSWORD : <input type="password"></p>
-            <input type="radio" name="ra">radio1
-            <input type="radio" name="ra">radio2
-            <p><input type="checkbox"></p>
-            <select> 
-                <option>drop-down</option>
-                <option>select</option>
-                <option>boxes</option>
-            </select>
-            <br><br>
-            <textarea>Default Value</textarea>
-            <input type="submit">
-        </form>
+        
+
+
     </body>
 </html>
