@@ -9,6 +9,36 @@
         <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
     </head>
     <body>
+        <script>
+            str = "Hello World!";
+            document.write(str);
+            console.log(5+6);
+            console.log("ERROR");
+        </script>
+
+        <br>
+        <p id="demo"></p>
+        <button type="button" onclick="document.write('write')">
+            write</button>
+        <button type="button" onclick="document.getElementById('demo').innerHTML = 'innerHTML'">
+            innerHTML</button>
+        <button type="button" onclick="alert('window.alert')">
+            window.alert</button>
+        <button type="button" onclick="console.log('console.log')">
+            console.log</button>
+        
+        <hr>  
+        <pre>   <!-- pre包夾JavaScript程式碼 可以得到JS的原始輸出(未經過瀏覽器的排版) -->
+        使用 document.write():
+        <script>document.write("Good"); document.write("Bye!");</script>
+        使用 document.writeln():
+        <script>document.writeln("Good"); document.writeln("Bye!");</script>
+        使用 document.write() 再加上 "\n":
+        <script>document.write("Good\n"); document.write("Bye!\n");</script>
+        </pre>
+        <hr>
+
+
         <table>
             <caption>TABLE</caption>
             <tr>
